@@ -1,0 +1,8 @@
+# MDEngine URL rewriter
+RewriteEngine	On
+RewriteRule		^\~style\.css$					theme/style.css [L]
+RewriteRule		^\~media/(.+)$					media/$1 [L]
+RewriteRule		^([A-Za-z0-9-_]+)?$				engine/controller.php?qs=$1
+RewriteRule		^([A-Za-z0-9-_]+)/markdown$		content/$1.md
+
+ErrorDocument 404 /wiki/engine/controller.php?qs=404
