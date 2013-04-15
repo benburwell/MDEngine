@@ -9,5 +9,6 @@ $mdengine['title_suffix']       = '';
 $mdengine['default_title']      = 'MDEngine';
 $mdengine['default_page']       = 'index';
 $mdengine['markdown_extension'] = 'md';
+$mdengine['redirect_canonical'] = false;
 
 ?>
