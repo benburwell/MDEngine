@@ -4,7 +4,8 @@
 //
 // Pages Controller
 
-define('DEBUG', true);
+ob_start();
+
 define('FILE_ROOT', substr(dirname(__FILE__), 0, -strlen('_mdengine')));
 
 require_once('settings.php');
@@ -12,7 +13,6 @@ require_once('md/markdown.php');
 
 // figure out which page was requested
 $page = substr($_SERVER['REQUEST_URI'], 1);
-if (DEBUG) echo "$page\n";
 
 // if it is a directory, append default_page
 if (substr($page, strlen($page)-1, 1) == '/' || $page == '') {
@@ -24,19 +24,17 @@ if (substr($page, strlen($page)-1, 1) == '/' || $page == '') {
 		exit();
 	}
 	
-	if (DEBUG) echo "$page\n";
 }
 
 // append .md to look for markdown files
 $page .= '.' . $mdengine['markdown_extension'];
-if (DEBUG) echo "$page\n";
 
 // go a directory up
 $page = FILE_ROOT . $page;
-if (DEBUG) echo "$page\n";
 
 // now we have the file path, get content if it exists
 $content = file_get_contents(FILE_ROOT.'_mdengine/views/404.md');
+header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
 
 if (file_exists($page)) {
 	$content = file_get_contents($page);
@@ -57,5 +55,12 @@ $title = $mdengine['title_prefix'] . $title . $mdengine['title_suffix'];
 require_once(FILE_ROOT.'_mdengine/views/header.php');
 echo Markdown($content);
 require_once(FILE_ROOT.'_mdengine/views/footer.php');
+
+$output = ob_get_contents();
+$len = strlen($output);
+
+header('Content-Length: '.$len);
+
+ob_end_flush();
 
 ?>
