@@ -10,6 +10,7 @@ define('FILE_ROOT', substr(dirname(__FILE__), 0, -strlen('_mdengine')));
 
 require_once('settings.php');
 require_once('md/markdown.php');
+require_once('sp/smartypants.php');
 
 // figure out which page was requested
 $page = substr($_SERVER['REQUEST_URI'], 1);
@@ -53,7 +54,7 @@ if (substr($content, 0, 7) === 'Title: ') {
 $title = $mdengine['title_prefix'] . $title . $mdengine['title_suffix'];
 
 require_once(FILE_ROOT.'_mdengine/views/header.php');
-echo Markdown($content);
+echo SmartyPants(Markdown($content));
 require_once(FILE_ROOT.'_mdengine/views/footer.php');
 
 $output = ob_get_contents();

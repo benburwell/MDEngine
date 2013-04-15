@@ -1,29 +1,25 @@
-PHP SmartyPants Typographer
-===========================
+PHP SmartyPants
+===============
 
-Version 1.0.1 - Sun 23 Jan 2013
+Version 1.5.1f - Sun 23 Jan 2013
 
 by Michel Fortin  
 <http://michelf.ca/>
 
-Original SmartyPants by John Gruber  
+based on work by John Gruber  
 <http://daringfireball.net/>
 
 
 Introduction
 ------------
 
-This is a special version of PHP SmartyPants with extra features. See 
-<http://www.michelf.com/projects/php-smartypants/typographer/> for 
-details.
+PHP SmartyPants is a port to PHP of the original SmartyPants written 
+in Perl by John Gruber.
 
 PHP SmartyPants is a free web publishing plug-in for WordPress and 
 Smarty template engine that easily translates plain ASCII punctuation 
 characters into "smart" typographic punctuation HTML entities. 
 SmartyPants can also be invoked as a standalone PHP function.
-
-PHP SmartyPants is a port to PHP of the original SmartyPants written 
-in Perl by John Gruber.
 
 SmartyPants can perform the following transformations:
 
@@ -108,6 +104,28 @@ Note: It is not possible at this time to apply a different set of
 filters to different entries. All your entries will be filtered by 
 PHP SmartyPants if the plugin is active. This is currently a limitation 
 of WordPress.
+
+
+### Blosxom ###
+
+SmartyPants works with Blosxom version 2.0 or later.
+
+1.  Rename the "SmartyPants.pl" plug-in to "SmartyPants" (case is
+    important). Movable Type requires plug-ins to have a ".pl"
+    extension; Blosxom forbids it (at least as of this writing).
+
+2.  Copy the "SmartyPants" plug-in file to your Blosxom plug-ins folder.
+    If you're not sure where your Blosxom plug-ins folder is, see the
+    Blosxom documentation for information.
+
+3.  That's it. The entries in your weblog should now automatically have
+    SmartyPants's default transformations applied.
+
+4.  If you wish to configure SmartyPants's behavior, open the
+    "SmartyPants" plug-in, and edit the value of the `$smartypants_attr`
+    configuration variable, located near the top of the script. The
+    default value is 1; see "Options", below, for the full list of
+    supported values.
 
 
 ### In your programs ###
@@ -215,16 +233,52 @@ Or inside a Smarty template:
     "b"). Thus, if you wish to apply all SmartyPants transformations
     (quotes, en- and em-dashes, and ellipses) and also translate
     `&quot;` entities into regular quotes so SmartyPants can educate
-    them, you should set the SMARTYPANTS_ATTR constant at the top of 
-    the file to:
+    them, you should pass the following to the smarty_pants attribute:
 
-        define( 'SMARTYPANTS_ATTR',    "qDew" );
+        $smartypants_attr = "qDew";
 
-    Inside a Smarty template, you could also pass the string as a 
-    parameter:
+    Inside a Smarty template, this will be:
 
         {$var|smartypants:"qDew"}
 
+
+Caveats
+-------
+
+### Why You Might Not Want to Use Smart Quotes in Your Weblog ###
+
+For one thing, you might not care.
+
+Most normal, mentally stable individuals do not take notice of proper
+typographic punctuation. Many design and typography nerds, however,
+break out in a nasty rash when they encounter, say, a restaurant sign
+that uses a straight apostrophe to spell "Joe's".
+
+If you're the sort of person who just doesn't care, you might well want
+to continue not caring. Using straight quotes -- and sticking to the
+7-bit ASCII character set in general -- is certainly a simpler way to
+live.
+
+Even if you *do* care about accurate typography, you still might want to
+think twice before educating the quote characters in your weblog. One
+side effect of publishing curly quote HTML entities is that it makes
+your weblog a bit harder for others to quote from using copy-and-paste.
+What happens is that when someone copies text from your blog, the copied
+text contains the 8-bit curly quote characters (as well as the 8-bit
+characters for em-dashes and ellipses, if you use these options). These
+characters are not standard across different text encoding methods,
+which is why they need to be encoded as HTML entities.
+
+People copying text from your weblog, however, may not notice that
+you're using curly quotes, and they'll go ahead and paste the unencoded
+8-bit characters copied from their browser into an email message or
+their own weblog. When pasted as raw "smart quotes", these characters
+are likely to get mangled beyond recognition.
+
+That said, my own opinion is that any decent text editor or email client
+makes it easy to stupefy smart quote characters into their 7-bit
+equivalents, and I don't consider it my problem if you're using an
+indecent text editor or email client.
 
 ### Algorithmic Shortcomings ###
 
@@ -256,8 +310,6 @@ example text to illustrate.
 Version History
 ---------------
 
-Typographer 1.0 (23 Jan 2013)
-
 1.5.1f (23 Jan 2013):
 
 *	Fixed handling of HTML comments to match latest HTML specs instead of
@@ -265,11 +317,6 @@ Typographer 1.0 (23 Jan 2013)
 
 *	Lowered WordPress filtering priority to avoid clashing with the 
 	[caption] tag filter. Thanks to Mehdi Kabab for the fix.
-
-
-Typographer 1.0 (28 Jun 2006)
-
-*   First public release of PHP SmartyPants Typographer.
 
 
 1.5.1oo (19 May 2006, unreleased)
@@ -347,3 +394,15 @@ met:
 *   Neither the name "SmartyPants" nor the names of its contributors may
     be used to endorse or promote products derived from this software
     without specific prior written permission.
+
+This software is provided by the copyright holders and contributors "as
+is" and any express or implied warranties, including, but not limited
+to, the implied warranties of merchantability and fitness for a
+particular purpose are disclaimed. In no event shall the copyright owner
+or contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to,
+procurement of substitute goods or services; loss of use, data, or
+profits; or business interruption) however caused and on any theory of
+liability, whether in contract, strict liability, or tort (including
+negligence or otherwise) arising in any way out of the use of this
+software, even if advised of the possibility of such damage.
