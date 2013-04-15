@@ -54,7 +54,11 @@ if (substr($content, 0, 7) === 'Title: ') {
 $title = $mdengine['title_prefix'] . $title . $mdengine['title_suffix'];
 
 require_once(FILE_ROOT.'_mdengine/views/header.php');
-echo SmartyPants(Markdown($content));
+
+$md = Markdown($content);
+$sp = SmartyPants($md);
+echo $sp;
+
 require_once(FILE_ROOT.'_mdengine/views/footer.php');
 
 $output = ob_get_contents();
