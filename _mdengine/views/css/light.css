@@ -1,0 +1,25 @@
+html, body {
+	background-color: #ffffd7;
+	color: #626262;
+}
+
+a {
+	color: #d70000;
+}
+
+a:hover {
+	background-color: #e4e4e4;
+}
+
+h1 {
+	color: #d70000;
+}
+
+blockquote {
+	border-color: #8a8a8a;
+}
+
+hr {
+	border-color: #8a8a8a;
+}
+
