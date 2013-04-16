@@ -64,10 +64,73 @@ h6 {
 }
 
 a {
-	color: #600;
+	color: #900;
 	text-decoration: none;
 }
 
 a:hover {
 	background-color: #ddd;
+}
+
+p {
+	margin-bottom: 1em;
+}
+
+blockquote {
+	border-left: 5px solid #ddd;
+	padding-left: 1em;
+}
+
+ul, ol {
+	margin-bottom: 1em;
+}
+
+ul {
+	list-style-type: square;
+}
+
+ol {
+	list-style-type: decimal;
+}
+
+li {
+	margin-left: 2em;
+}
+
+p code {
+	font-family: monospace;
+	background-color: #eee;
+	border-radius: 3px;
+	border: 1px solid #ddd;
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+}
+
+pre {
+	line-height: 1em;
+	margin-bottom: 1em;
+	background-color: #eee;
+	border: 1px solid #ddd;
+	padding: 0.5em;
+	border-radius: 3px;
+}
+
+pre code {
+	font-family: monospace;
+}
+
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+hr {
+	border-top: 1px solid #999;
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
+	border-collapse: collapse;
 }
