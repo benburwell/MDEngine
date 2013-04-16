@@ -21,11 +21,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	margin-bottom: 0.25em;
-	font-size: 4em;
+	margin-bottom: 0.333em;
+	font-size: 3em;
 	line-height: 1em;
 	font-weight: bold;
-	border-bottom: 1px solid #999;
+	color: #900;
 }
 
 h2 {
@@ -69,7 +69,7 @@ a {
 }
 
 a:hover {
-	background-color: #ddd;
+	background-color: #eee;
 }
 
 p {
