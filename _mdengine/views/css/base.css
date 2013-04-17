@@ -1,5 +1,4 @@
 html {
-	font-family: 'Georgia', serif;
 	font-size: 100%;
 	line-height: 2em;
 }
@@ -16,16 +15,11 @@ div.main {
 	margin-bottom: 10em;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
-}
-
 h1 {
 	margin-bottom: 0.333em;
 	font-size: 3em;
 	line-height: 1em;
 	font-weight: bold;
-	color: #900;
 }
 
 h2 {
@@ -64,12 +58,7 @@ h6 {
 }
 
 a {
-	color: #900;
 	text-decoration: none;
-}
-
-a:hover {
-	background-color: #eee;
 }
 
 p {
@@ -77,7 +66,8 @@ p {
 }
 
 blockquote {
-	border-left: 5px solid #ddd;
+	border-left-width: 5px;
+	border-left-style: solid;
 	padding-left: 1em;
 }
 
@@ -99,9 +89,9 @@ li {
 
 p code {
 	font-family: monospace;
-	background-color: #eee;
 	border-radius: 3px;
-	border: 1px solid #ddd;
+	border-width: 1px;
+	border-style: solid;
 	padding-left: 0.3em;
 	padding-right: 0.3em;
 }
@@ -109,8 +99,8 @@ p code {
 pre {
 	line-height: 1em;
 	margin-bottom: 1em;
-	background-color: #eee;
-	border: 1px solid #ddd;
+	border-width: 1px;
+	border-style: solid;
 	padding: 0.5em;
 	border-radius: 3px;
 }
@@ -128,7 +118,8 @@ em {
 }
 
 hr {
-	border-top: 1px solid #999;
+	border-top-width: 1px;
+	border-top-style: solid;
 	border-bottom: none;
 	border-left: none;
 	border-right: none;
