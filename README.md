@@ -10,7 +10,7 @@ Requires PHP and an Apache server (>= 2.2.16) running `mod_dir` in `.htaccess` f
 Installation
 ============
 
-Simply place the `_mdengine` directory and the `.htaccess` file in the web root of your Apache server. All existing content will act as it did before, and any Markdown files you add will be handled by MDEngine.
+Simply [download MDEngine][https://github.com/bburwell/MDEngine/archive/master.zip], unzip it and place it in your web root directory. All existing content will act as it did before, and any Markdown files you add will be handled by MDEngine.
 
 Themes
 ======
