@@ -11,3 +11,16 @@ Installation
 ============
 
 Simply place the `_mdengine` directory and the `.htaccess` file in the web root of your Apache server. All existing content will act as it did before, and any Markdown files you add will be handled by MDEngine.
+
+Themes
+======
+
+MDEngine is highly extensible, but also usable straight out of the box. To that end, MDEngine currently comes with three themes. To change the theme, you must edit the `settings.php` file.
+
+Find the `$mdengine['theme']` and change its value to the name of the theme you want to use. The default is `plain`. Currently available options are:
+
+* `plain`: a simple red and black on white single column layout
+* `light`: similar to `plain`; uses [Ethan Schoonover's Solarized][Solarized] colors
+* `dark`: also uses Solarized, but with a dark base
+
+[Solarized]: http://ethanschoonover.com/solarized
