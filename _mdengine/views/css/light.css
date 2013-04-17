@@ -1,25 +1,35 @@
-html, body {
-	background-color: #ffffd7;
-	color: #626262;
-}
-
-a {
-	color: #d70000;
-}
-
-a:hover {
-	background-color: #e4e4e4;
+html {
+	font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+	color: #657b83;
+	background-color: #fdf6e3;
+	font-weight: 200;
 }
 
 h1 {
-	color: #d70000;
+	color: #268bd2;
+}
+
+a {
+	color: #268bd2;
+}
+
+a:hover {
+	background-color: #eee8d5;
 }
 
 blockquote {
-	border-color: #8a8a8a;
+	border-color: #eee8d5;
+}
+
+p code, pre {
+	background-color: #eee8d5;
+	border-color: #93a1a1;
 }
 
 hr {
-	border-color: #8a8a8a;
+	border-color: #657b83;
 }
 
+em {
+	font-weight: 200;
+}
