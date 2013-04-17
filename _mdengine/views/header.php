@@ -9,8 +9,15 @@
 		<!-- MDEngine Default Styles -->
 		<link rel="stylesheet" type="text/css" href="/_mdengine/views/css/base.css" />
 
-		<!-- jQuery 1.9.1 -->
-		<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+		<!-- Theme -->
+		<link rel="stylesheet" type="text/css" href="/_mdengine/views/css/<?php echo $mdengine['theme']; ?>.css" />
+
+		<meta name="description" content="<?php echo $mdengine['meta_description']; ?>" />
+		<meta name="author" content="<?php echo $mdengine['meta_author']; ?>" />
+
+		<?php if ( ! $mdengine['meta_allow_search']): ?>
+		<meta name="robots" content="noindex, nofollow" />
+		<?php endif; ?>
 
 	</head>
 	<body>
