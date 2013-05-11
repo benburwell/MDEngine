@@ -7,6 +7,8 @@ Create your own template (or use the default) and simply add your Markdown files
 
 Requires PHP and an Apache server (>= 2.2.16) running `mod_dir` in `.htaccess` files.
 
+For an online demo, see <http://mdengine.benburwell.com/>.
+
 Installation
 ============
 
