@@ -18,6 +18,16 @@ In case of a 404 error, the file at `views/404.md` will be displayed, so edit it
 
 To see what some Markdown can produce from this CSS file, check out [this page](_mdengine/views/theme-test).
 
+### Themes
+
+MDEngine comes with three themes built in. Switch the theme of this page to preview the differences (requires JavaScript).
+
+* <a href="#" onclick="loadTheme('plain');return false;">Plain</a> (default)
+* <a href="#" onclick="loadTheme('light');return false;">Light</a>
+* <a href="#" onclick="loadTheme('dark');return false;">Dark</a>
+
+This is for previewing purposes only; for changes to take effect, you must edit `settings.php`.
+
 ### About
 
 MDEngine was created and is maintained by [Ben Burwell][]. You can [fork MDEngine on GitHub][GH].
