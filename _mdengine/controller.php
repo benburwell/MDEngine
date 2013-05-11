@@ -9,6 +9,7 @@ ob_start();
 define('FILE_ROOT', substr(dirname(__FILE__), 0, -strlen('_mdengine')));
 
 require_once('settings.php');
+require_once('functions.php');
 require_once('md/markdown.php');
 require_once('sp/smartypants.php');
 
@@ -16,7 +17,7 @@ require_once('sp/smartypants.php');
 $page = substr($_SERVER['REQUEST_URI'], 1);
 
 // if it is a directory, append default_page
-if (substr($page, strlen($page)-1, 1) == '/' || $page == '') {
+if (url_is_directory($page)) {
 	$page .= $mdengine['default_page'];
 
 	// redirect, e.g., /dir/ to /dir/index
