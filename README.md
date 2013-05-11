@@ -1,5 +1,4 @@
-About MDEngine
-==============
+## About MDEngine
 
 **MDEngine** is a simple website development platform based on [Markdown](http://daringfireball.net/projects/markdown/) and PHP.
 
@@ -9,13 +8,11 @@ Requires PHP and an Apache server (>= 2.2.16) running `mod_dir` in `.htaccess` f
 
 For an online demo, see <http://mdengine.benburwell.com/>.
 
-Installation
-============
+## Installation
 
 Simply [download MDEngine](https://github.com/bburwell/MDEngine/archive/master.zip), unzip it and place it in your web root directory. All existing content will act as it did before, and any Markdown files you add will be handled by MDEngine.
 
-Themes
-======
+## Themes
 
 MDEngine is highly extensible, but also usable straight out of the box. To that end, MDEngine currently comes with three themes. To change the theme, you must edit the `settings.php` file.
 
